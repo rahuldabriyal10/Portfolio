@@ -5,6 +5,8 @@ window.addEventListener('load', () => {
     loader.classList.add('hidden');
     setTimeout(() => {
       loader.style.display = 'none';
+      // Remove loading class so scrolling is enabled
+      document.body.classList.remove('loading');
     }, 600);
   }
 });
@@ -46,7 +48,7 @@ if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
-//Disabling control+C or v or F12 button lol
+//Disabling control+C or V or F12 button lolllll
 document.addEventListener('keydown', function (e) {
   if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'u') || e.key === 'F12') {
     e.preventDefault();
