@@ -48,9 +48,10 @@ if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
-//Disabling control+C or V or F12 button lolllll
+//Disabling control+C and F12 button lolllll
 document.addEventListener('keydown', function (e) {
-  if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'u') || e.key === 'F12') {
+  if ((e.ctrlKey && e.key === 'c') || e.key === 'F12') {
     e.preventDefault();
+    alert("LOL :)");
   }
 });
