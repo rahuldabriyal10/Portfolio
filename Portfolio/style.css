@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Segoe UI', Tahoma, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -32,28 +33,27 @@ body {
 
 /* THEME VARIABLES */
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #fff;
   --text-color: #222;
-  --accent-color: #007acc;
-  --accent-hover: #005fa3;
+  --accent-color:#3399ff;
+  --accent-hover: #15ff00;
 }
 
 body.dark {
   --bg-color: #1e1e1e;
-  --text-color: #f0f0f0;
-  --accent-color: #66aaff;
-  --accent-hover: #3399ff;
+  --text-color: #fff;
+  --accent-color: #3399ff;
+  --accent-hover: #15ff00;
 }
 
 /* LAYOUT */
 .main {
   text-align: center;
-  padding-top: 100px;
 }
 
 /* HEADER */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -85,7 +85,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--text-color);
+  color: var(--bg-color);
 }
 
 #theme-toggle {
@@ -161,7 +161,7 @@ body.dark section {
 
 /* PROFILE */
 .profile-photo {
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -225,6 +225,7 @@ body.dark .btn {
 
 .skills-list li:hover,
 .skills-list li:focus {
+  background-color: var(--accent-hover);
   color: var(--text-color);
   transform: scale(1.1) !important;
   outline: none;
@@ -236,6 +237,87 @@ body.dark .btn {
   font-size: 1.1rem;
   text-align: center;
 }
+
+/* Projects Section */
+.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Project Card */
+.project-card {
+  background: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 300px;       /* Card width */
+  flex: 1 1 300px;        /* Grow/shrink for responsive layout */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 20px rgb(67, 18, 244);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.project-content {
+  padding: 15px;
+}
+
+.project-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.project-content a {
+  text-decoration: none;
+  color: yellow;
+  font-weight: 600;
+}
+
+.project-content h3{
+  color: var(--text-color);
+}
+
+.project-content a:hover {
+  text-decoration: underline;
+}
+
+/* For Responsive Layout */
+@media (max-width: 900px) {
+  .projects-wrapper {
+    gap: 20px;
+  }
+  .project-card {
+    max-width: 45%;      /* Two cards per row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    max-width: 100%;     /* One card per row on mobile */
+  }
+}
+
 
 #contact {
   margin-top: 1rem;
