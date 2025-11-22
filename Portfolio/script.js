@@ -11,39 +11,34 @@ window.addEventListener('load', () => {
   }
 });
 
-// Theme toggle button logic
-const themeToggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Initialize theme from localStorage or system preference
-const storedTheme = localStorage.getItem('theme');
-
-if (storedTheme === 'dark') {
-  body.classList.add('dark');
-  themeToggleBtn.textContent = '☀️';
-} else if (storedTheme === 'light') {
-  body.classList.remove('dark');
-  themeToggleBtn.textContent = '🌙';
-} else {
-  // If no preference saved, check system preference
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.classList.add('dark');
-    themeToggleBtn.textContent = '☀️';
-  } else {
-    body.classList.remove('dark');
-    themeToggleBtn.textContent = '🌙';
-  }
-}
-
-// Toggle dark mode on button click
-themeToggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  const isDark = body.classList.contains('dark');
-  themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
 
 //for lock auto scrolling while refreshing page
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
+
+// Sidebar open/close
+const sidebar = document.querySelector('.sidebar');
+function openSidebar() { sidebar.style.right = '0'; }
+function closeSidebar() { sidebar.style.right = '-260px'; }
+
+// Theme toggle logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Load saved theme
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme === 'dark') {
+    body.classList.add('dark');
+    themeToggle.textContent = '☀️';
+} else {
+    themeToggle.textContent = '🌙';
+}
+
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});

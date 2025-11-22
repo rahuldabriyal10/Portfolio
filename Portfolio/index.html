@@ -14,26 +14,40 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body oncontextmenu="return false;" class="loading" oncontextmenu="return false;">
+<body class="loading" oncontextmenu="return false;">
   <!-- Loader -->
   <div id="loader" class="loader"></div>
 
-  <!-- Main Page Content -->
-  <div class="main">
-    <!-- Header -->
-    <header>
-      <h1>RAHUL DABRIYAL</h1>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle" aria-label="Toggle Dark Theme" title="Toggle Theme">🌙</button>
-      </nav>
-    </header>
+  <!-- Header -->
+  <header>
+  <div class="logo">Rahul Dabriyal</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 
+  <div class="header-controls">
+    <div id="theme-toggle">🌙</div>
+    <div class="menu-btn" onclick="openSidebar()">☰</div>
+  </div>
+  
+</header>
+
+<!-- SIDEBAR MOBILE -->
+<ul class="sidebar">
+  <li class="close-btn" onclick="closeSidebar()">✖</li>
+  <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+  <li><a href="#about" onclick="closeSidebar()">About</a></li>
+  <li><a href="#skills" onclick="closeSidebar()">Skills</a></li>
+  <li><a href="#projects" onclick="closeSidebar()">Projects</a></li>
+  <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
+</ul>
+<div id="fakeheader"></div>
+
+  <div class="main">
     <!-- Main Content -->
     <main>
       <section id="home" class="section-center" data-aos="fade-up">
@@ -42,13 +56,15 @@
         <h2 data-aos="fade-left" data-aos-delay="200">Computer Science Student & Aspiring Developer</h2>
         <p data-aos="fade-up" data-aos-delay="200">Turning classroom theory into real-world projects.</p>
         <a href="#contact" class="btn btn--large">Get in Touch</a>
+        <a href="assets/rahul_dabriyal_resume.pdf" download class="btn btn--large">Download CV</a>
       </section>
 
       <section id="about" class="section-center about-section" data-aos="fade-up">
         <div class="section-wrapper">
           <h2>About Me</h2>
           <p data-aos="fade-up" data-aos-delay="100">
-            Hi there! My name is Rahul and I’m a Computer Science student with a real passion for programming and problem-solving. I
+            Hi there! My name is Rahul and I’m a Computer Science student with a real passion for programming and
+            problem-solving. I
             especially enjoy working with C# because it lets me build practical solutions and learn how to think
             logically. Coding isn’t just something I study—it’s something I genuinely enjoy.
           </p>
@@ -78,54 +94,48 @@
         </ul>
       </section>
 
+      <!-- Projects Section -->
       <section id="projects" class="section-center" data-aos="fade-up">
+
         <h2>Projects</h2>
-         <!-- Projects Section -->
-      <div id="projects" data-aos="fade-up">
-        <div class="container">
-          <div class="projects-wrapper">
+        
+        <div id="projects" data-aos="fade-up">
+          <div class="container">
+            <div class="projects-wrapper">
 
-            <!-- TaskMate Project Card -->
-            <div class="project-card">
-              <div class="project-image">
-                <img src="assets/task manager.png" loading="lazy" alt="TaskMate App">
-              </div>
-              <div class="project-content">
-                <h3>TaskMate (.NET)</h3>
-                <p data-aos="fade-up">A simple to-do manager desktop app built with .NET and C#. Add, delete, and mark
-                  tasks completed.
-                  Save your tasks locally.</p>
+              <!-- TaskMate Project Card -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img src="assets/taskmate.jpg" loading="lazy" alt="TaskMate App">
+                </div>
+                <div class="project-content">
+                  <h3>TaskMate (.NET)</h3>
+                  <p data-aos="fade-up">A simple to-do manager desktop app built with .NET and C#. Add, delete, and mark
+                    tasks completed.
+                    Save your tasks locally.</p>
                   <i class="fab fa-github"></i>
-                <a href="https://github.com/rahuldabriyal10" target="_blank">View on GitHub</a>
+                  <a href="https://github.com/rahuldabriyal10" target="_blank">View on GitHub</a>
+                </div>
               </div>
-            </div>
 
-            <!-- WeatherNow Project Card -->
-            <div class="project-card">
-              <div class="project-image">
-                <img src="assets/weatherr.jpg" loading="lazy" alt="WeatherNow App">
-              </div>
-              <div class="project-content">
-                <h3>WeatherNow (.NET)</h3>
-                <p data-aos="fade-up">A simple desktop weather app that fetches real-time weather info using the
-                  OpenWeatherMap API.
-                  Built in .NET and C#.</p>
+              <!-- WeatherNow Project Card -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img src="assets/weather.jpg" loading="lazy" alt="WeatherNow App">
+                </div>
+                <div class="project-content">
+                  <h3>WeatherNow (.NET)</h3>
+                  <p data-aos="fade-up">A simple desktop weather app that fetches real-time weather info using the
+                    OpenWeatherMap API.
+                    Built in .NET and C#.</p>
                   <i class="fab fa-github"></i>
-                <a href="https://github.com/rahuldabriyal10" target="_blank">View on GitHub</a>
+                  <a href="https://github.com/rahuldabriyal10" target="_blank">View on GitHub</a>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
-      </section>
-
-      <section id="resume" class="section-center" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>You can download my resume below:</p>
-        <a href="assets/rahul_dabriyal_resume.pdf" download class="btn btn--shadow" target="_blank" rel="noopener">
-          📄 Download Resume (PDF)
-        </a>
       </section>
 
       <section id="contact" class="section-center" data-aos="fade-up">
@@ -166,7 +176,7 @@
       duration: 600,
       easing: 'ease-in-out',
       once: true,
-      offset: 100, 
+      offset: 100,
     });
   </script>
 </body>

@@ -9,7 +9,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px;
 }
 
 body {
@@ -51,55 +50,122 @@ body.dark {
   text-align: center;
 }
 
+#fakeheader{
+    width: 100%;
+    height: 4rem;
+    background-color:transparent;
+}
+
 /* HEADER */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--accent-color);
-  color: var(--text-color);
-  padding: 1rem 2rem;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-nav {
+  height: 3.5rem;
+  background-color: var(--accent-color);
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
   gap: 1rem;
 }
 
-nav a {
-  color: var(--text-color);
+.nav-links a {
+  padding: 0.5rem 1rem;
+  color: #000;
   font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-nav a:hover {
-  color: var(--bg-color);
+.nav-links a:hover {
+  border-radius: 5px;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-btn,
 #theme-toggle {
-  background: transparent;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.3rem;
+  display: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 4px;
-  padding: 0.2rem 0.5rem;
+  color: #000;
 }
 
-#theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100vh;
+  text-align: start;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: 0.3s;
+  display: flex;
+  z-index: 1001;
+}
+
+.sidebar {
+    overflow-y: auto;        /* Enables vertical scrolling */
+    overflow-x: hidden;      /* Prevents sideways scroll */
+    max-height: 100vh;       /* Sidebar never grows beyond screen height */
+    padding-bottom: 2rem;    /* Space at bottom */
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  padding: 0.5rem;
+  color: var(--text-color);
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  color: #000;
+}
+
+ul{
+  list-style: none;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+  .nav-links { display: none; }
+  .menu-btn { display: block; }
+  #theme-toggle { display: block; }
+}
+
+@media(min-width:901px) {
+  #theme-toggle { display: block; }
+}
+
+@media (min-width: 1400px) {
+    header {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
 }
 
 /* LOADER */
@@ -137,7 +203,7 @@ body.loading {
 section {
   padding: 2rem;
   border-bottom: 1px solid #ccc;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 10rem;
 }
 
 body.dark section {
@@ -161,7 +227,6 @@ body.dark section {
 
 /* PROFILE */
 .profile-photo {
-  margin-top: 1.7rem;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -181,6 +246,7 @@ body.dark section {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   user-select: none;
+  box-shadow: 0 4px 12px rgba(16, 4, 235, 0.4);
 }
 
 .btn:hover,
@@ -188,14 +254,12 @@ body.dark section {
   background-color: var(--accent-hover);
   color: var(--text-color);
   transform: scale(1.05);
+  color: var(--bg-color);
 }
 
 .btn--large {
   padding: 1rem 2.5rem;
-}
-
-.btn--shadow {
-  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.4);
+  margin: 0.5rem;
 }
 
 /* Dark mode buttons */
@@ -263,13 +327,14 @@ body.dark .btn {
 .project-card:hover {
   transform: translateY(-10px);
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 8px 20px rgb(67, 18, 244);
+  box-shadow: 0 10px 25px rgb(67, 18, 244);
 }
 
 .project-image img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   display: block;
+  object-fit: cover;
 }
 
 .project-content {
@@ -317,7 +382,6 @@ body.dark .btn {
     max-width: 100%;     /* One card per row on mobile */
   }
 }
-
 
 #contact {
   margin-top: 1rem;
