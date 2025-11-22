@@ -20,35 +20,36 @@
 
   <!-- Header -->
   <header>
-  <div class="logo">Rahul Dabriyal</div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <div class="logo">Rahul Dabriyal</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="header-controls">
+      <div id="theme-toggle">🌙</div>
+      <div class="menu-btn" onclick="openSidebar()">☰</div>
+    </div>
+
+  </header>
+
+  <!-- SIDEBAR MOBILE -->
+  <ul class="sidebar">
+    <li class="close-btn" onclick="closeSidebar()">✖</li>
+    <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+    <li><a href="#about" onclick="closeSidebar()">About</a></li>
+    <li><a href="#skills" onclick="closeSidebar()">Skills</a></li>
+    <li><a href="#projects" onclick="closeSidebar()">Projects</a></li>
+    <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
   </ul>
+  <div id="fakeheader"></div>
 
-  <div class="header-controls">
-    <div id="theme-toggle">🌙</div>
-    <div class="menu-btn" onclick="openSidebar()">☰</div>
-  </div>
-  
-</header>
-
-<!-- SIDEBAR MOBILE -->
-<ul class="sidebar">
-  <li class="close-btn" onclick="closeSidebar()">✖</li>
-  <li><a href="#home" onclick="closeSidebar()">Home</a></li>
-  <li><a href="#about" onclick="closeSidebar()">About</a></li>
-  <li><a href="#skills" onclick="closeSidebar()">Skills</a></li>
-  <li><a href="#projects" onclick="closeSidebar()">Projects</a></li>
-  <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
-</ul>
-<div id="fakeheader"></div>
-
+  <!-- Main Content -->
   <div class="main">
-    <!-- Main Content -->
+    
     <main>
       <section id="home" class="section-center" data-aos="fade-up">
         <img src="assets/profilepic.jpg" loading="lazy" alt="Rahul Dabriyal" class="profile-photo" draggable="false" />
@@ -98,8 +99,8 @@
       <section id="projects" class="section-center" data-aos="fade-up">
 
         <h2>Projects</h2>
-        
-        <div id="projects" data-aos="fade-up">
+
+        <div data-aos="fade-up">
           <div class="container">
             <div class="projects-wrapper">
 
@@ -132,7 +133,6 @@
                   <a href="https://github.com/rahuldabriyal10" target="_blank">View on GitHub</a>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -159,14 +159,14 @@
       </section>
 
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>Thanks for visiting my Portfolio.</p>
-      <p>Open for work/freelancing.</p>
-      <p>© 2025 Rahul Dabriyal. All rights reserved.</p>
-    </footer>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Thanks for visiting my Portfolio.</p>
+    <p>Open for work/freelancing.</p>
+    <p>© 2025 Rahul Dabriyal. All rights reserved.</p>
+  </footer>
 
   <!-- JS -->
   <script src="script.js"></script>
