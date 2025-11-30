@@ -32,15 +32,16 @@ body {
 
 /* THEME VARIABLES */
 :root {
-  --bg-color: #fff;
-  --text-color: #222;
+  --bg-color: #ffffff;
+  --text-color: #1e1e1e;
   --accent-color:#3399ff;
   --accent-hover: #15ff00;
+  --mainclr:#1e1e1e;
 }
 
 body.dark {
   --bg-color: #1e1e1e;
-  --text-color: #fff;
+  --text-color: #ffffff;
   --accent-color: #3399ff;
   --accent-hover: #15ff00;
 }
@@ -55,6 +56,11 @@ body.dark {
     width: 100%;
     height: 4rem;
     background-color:transparent;
+}
+
+.title{
+  color: var(--accent-color);
+  font-weight: bold;
 }
 
 header {
@@ -74,7 +80,7 @@ header {
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
-  color: black;
+  color: var(--mainclr);
 }
 
 .nav-links {
@@ -84,7 +90,7 @@ header {
 
 .nav-links a {
   padding: 0.5rem 1rem;
-  color: #000;
+  color: var(--mainclr);
   font-weight: 600;
 }
 
@@ -103,7 +109,7 @@ header {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #000;
+  color: var(--mainclr);
 }
 
 /* SIDEBAR */
@@ -136,7 +142,8 @@ header {
 
 .sidebar a {
   padding: 0.5rem;
-  color: var(--text-color);
+  color: var(--mainclr);
+  font-weight: bold;
 }
 
 .close-btn {
