@@ -49,9 +49,9 @@
 
   <!-- Main Content -->
   <div class="main">
-    
+
     <main>
-      <section id="home" class="section-center" data-aos="fade-up">
+      <section id="home" class="section-center">
         <img src="assets/profilepic.jpg" loading="lazy" alt="Rahul Dabriyal" class="profile-photo" draggable="false" />
         <h1 data-aos="fade-right" data-aos-delay="200">Hi, I'm <span class="title">Rahul Dabriyal</span></h1>
         <h2 data-aos="fade-left" data-aos-delay="200">Computer Science Student & Aspiring Developer</h2>
@@ -60,7 +60,8 @@
         <a href="assets/rahul_dabriyal_resume.pdf" download class="btn btn--large">Download CV</a>
       </section>
 
-      <section id="about" class="section-center about-section" data-aos="fade-up">
+      <!-- About -->
+      <section id="about" class="section-center about-section">
         <div class="section-wrapper">
           <h2>About Me</h2>
           <p data-aos="fade-up" data-aos-delay="100">
@@ -81,22 +82,55 @@
         </div>
       </section>
 
-      <section id="skills" class="section-center" data-aos="fade-up" data-aos-delay=" 300">
+      <!-- Skills -->
+      <section id="skills" class="section-center">
         <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>C# .NET Core</li>
-          <li>Python</li>
-          <li>Java</li>
-          <li>PostgreSQL</li>
-          <li>Data Structures & Algorithms</li>
-        </ul>
+
+        <div class="cards-section">
+          <div class="cards-container">
+
+            <div class="card">
+              <h3>Web Development</h3>
+              <ul class="skill-inline">
+                <li data-aos="fade-up"><i class="fab fa-html5 html"></i> HTML</li>
+                <li data-aos="fade-up"><i class="fab fa-css3-alt css"></i> CSS</li>
+                <li data-aos="fade-up"><i class="fab fa-js js"></i> JavaScript</li>
+                <li data-aos="fade-up"><i class="fab fa-php php"></i> PHP</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Languages</h3>
+              <ul class="skill-inline">
+                <li data-aos="fade-up"><i class="fas fa-code csharp"></i> C#</li>
+                <li data-aos="fade-up"><i class="fab fa-java java"></i> Java</li>
+                <li data-aos="fade-up"><i class="fab fa-python python"></i> Python</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Database</h3>
+              <ul class="skill-inline">
+                <li data-aos="fade-up"><i class="fas fa-database mysql"></i> MySQL</li>
+                <li data-aos="fade-up"><i class="fas fa-database postgres"></i> PostgreSQL</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Dev Tools</h3>
+              <ul class="skill-inline">
+                <li data-aos="fade-up"><i class="fab fa-git-alt git"></i> Git</li>
+                <li data-aos="fade-up"><i class="fab fa-github"></i> GitHub</li>
+                <li data-aos="fade-up"><i class="fas fa-code vscode"></i> VS Code</li>
+                <li data-aos="fade-up"><i class="fas fa-laptop-code visualstudio"></i> Visual Studio</li>
+              </ul>
+            </div>
+
+          </div>
       </section>
 
       <!-- Projects Section -->
-      <section id="projects" class="section-center" data-aos="fade-up">
+      <section id="projects" class="section-center">
 
         <h2>Projects</h2>
 
@@ -138,7 +172,7 @@
         </div>
       </section>
 
-      <section id="contact" class="section-center" data-aos="fade-up">
+      <section id="contact" class="section-center">
         <h2>Contact</h2>
         <p data-aos="fade-up" data-aos-delay="100">
           <i class="fab fa-whatsapp"></i> WhatsApp:
@@ -163,9 +197,11 @@
 
   <!-- Footer -->
   <footer>
-    <p>Thanks for visiting my Portfolio.</p>
-    <p>Open for work/freelancing.</p>
-    <p>© 2025 Rahul Dabriyal. All rights reserved.</p>
+    <div>
+      <p>Thanks for visiting my Portfolio.</p>
+      <p>Open for work/freelancing.</p>
+      <p>© 2025 Rahul Dabriyal. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- JS -->
