@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
   }
 });
 
-
 //for lock auto scrolling while refreshing page
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
