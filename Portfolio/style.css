@@ -98,6 +98,12 @@ header {
   z-index: 1000;
 }
 
+@media (min-width: 1400px) {
+  header {
+    padding: 0 calc((100% - 1400px) / 2);
+  }
+}
+
 .logo {
   display: inline-block;
   font-weight: bold;
@@ -138,9 +144,8 @@ header {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100vh;
+  right: -100%;
+  width: 280px;
   text-align: start;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
@@ -149,17 +154,10 @@ header {
   transition: 0.7s;
   display: flex;
   z-index: 1001;
-}
-
-.sidebar {
   overflow-y: auto;
-  /* Enables vertical scrolling */
   overflow-x: hidden;
-  /* Prevents sideways scroll */
-  max-height: 100vh;
-  /* Sidebar never grows beyond screen height */
+  min-height: 100%;
   padding-bottom: 2rem;
-  /* Space at bottom */
   border: 1.5px solid var(--accent-color);
 }
 
@@ -171,6 +169,12 @@ header {
   padding: 0.5rem;
   color: var(--mainclr);
   font-weight: bold;
+}
+
+@media (max-width:400px) {
+  .sidebar {
+    width: 100%;
+  }
 }
 
 .close-btn {
@@ -206,6 +210,8 @@ section {
   padding: 2rem;
   border-bottom: 1px solid #ccc;
   scroll-margin-top: 3rem;
+  height: 100%;
+  width: 100%;
 }
 
 body.dark section {

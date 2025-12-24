@@ -19,7 +19,7 @@ if ('scrollRestoration' in history) {
 // Sidebar open/close
 const sidebar = document.querySelector('.sidebar');
 function openSidebar() { sidebar.style.right = '0'; }
-function closeSidebar() { sidebar.style.right = '-260px'; }
+function closeSidebar() { sidebar.style.right = '-100%'; }
 
 // Theme toggle logic
 const themeToggle = document.getElementById('theme-toggle');
